@@ -2,9 +2,7 @@
 	<html lang="en">	
 		<head>
 			<title>Draka Scrap management</title>
-			<meta name="viewport" content="width=device-width, initial-scale=1">
 		</head>
-		<body>
 			{{#if currentUser}}
 				{{> navBar}}
 			{{else}}
@@ -12,14 +10,10 @@
 			{{/if}}
 			<div class="container">
 				<div class="row">
-					<div class="col-md-8">
-						{{> insertScapReport}}	
-					</div>
-					<div class="col-md-4">
-					</div>
+					{{> insertScapReport}}	
 				</div>
 			</div>
-		</body>
+
 	</html>
 </template>
 

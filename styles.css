@@ -1,0 +1,18 @@
+body {
+	background-color: #FFE5E5;
+}
+
+.navbar-inverse {
+    background-color: #31708f;
+    border-color: rgb(222, 66, 66);
+}
+
+.navbar-inverse .navbar-nav > .active > a:focus {
+    color: #fff;
+    background-color: #D02929;
+}
+
+.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus {
+    color: #fff;
+    background-color: #D02929;
+}
