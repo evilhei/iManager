@@ -4,6 +4,8 @@ Accounts.onLogin(function() {
 
 
 Meteor.methods({
+
+	//vajab veel ühte meetodit, mis ei laseks üle 1 kasutaja luua.
 	'addAdminToFirstUser': function() {
 		var adminRole = 'admin';
 		var userId = Meteor.userId();
