@@ -2,6 +2,18 @@ Accounts.onLogin(function() {
 	Meteor.call('addAdminToFirstUser');
 });
 
+Meteor.startup(function () {
+		Accounts.validateNewUser(function () {
+			var userCount = Meteor.users.find().count();
+			if (userCount > 1) {
+				new Meteor.Error('Only one account is allowed') 
+				return false;
+			} else {
+				return true;
+			}
+		})	
+
+})
 
 Meteor.methods({
 
@@ -21,7 +33,18 @@ Meteor.methods({
 		if (mingi check, mis annaks errorit?) {
 			throw new Meteor.Error("no-data-found", "No data can be found for selected period");
 		} */
-		var reportData = ScrapReport.find({dateEntered: { $gte: startDate}, dateEntered: { $lte: finishDate}}).fetch();
+
+		var reportData = ScrapReport.find({dateEntered: { $gte: startDate, $lte: finishDate } } ).fetch();
 		return reportData;
 	}
 });
+
+Meteor.publish('dataForFormsWorkCenter', function(){
+	return WorkCenter.find({})
+})
+Meteor.publish('dataForFormsWorker', function(){
+	return Worker.find({})
+})
+Meteor.publish('dataForFormsScrapType', function(){
+	return ScrapType.find({})
+})

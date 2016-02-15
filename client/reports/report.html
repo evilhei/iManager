@@ -5,15 +5,14 @@
 			{{else}}
 				{{> loginButtons}}
 			{{/if}}
-			<div class="container">
-			<div class="row">
-					<div class="col-md-4">	
-						{{> report}}
-					</div>
-					<div class="col-md-8">
-						{{> reportData}}
+		<div class="container">
+			<div class="row">	
+					{{> report}}
 				</div>
-			</div>
+				<div class="row">
+					{{> reportData}}
+				</div>
+
 		</div>
 	</body>		
 </template>
@@ -22,17 +21,17 @@
 <template name="report">
 					<form>
 						<label>Select start date: </label>
-						<div class="datepicker input-group datepicker date" data-date-format="mm-dd-yyyy">
+						<div id="datepicker" class="datepicker input-group datepicker date" data-date-format="mm-dd-yyyy">
 							<input class="form-control" type="text" value="" data-behavior="datepicker" id="startDate"/>
-							<span class="input-group-addon datepicker date"><i class="glyphicon glyphicon-calendar"></i></span>
+							<span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
 						</div>
 
 						<label>Select finish date: </label>
-							<div class="datepicker input-group datepicker date" data-date-format="mm-dd-yyyy">
+							<div id="datepicker1" class="datepicker input-group datepicker date" data-date-format="mm-dd-yyyy">
 							<input class="form-control" type="text" value="" data-behavior="datepicker" id="finishDate"/>
-							<span class="input-group-addon datepicker date"><i class="glyphicon glyphicon-calendar"></i></span>
+							<span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
 						</div>
-						<button type="submit" class="btn btn-default">Submit</button>
+						<button type="submit" class="btn btn-default">query the data</button>
 					</form>
 					
 </template>

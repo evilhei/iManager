@@ -1,12 +1,14 @@
 <template name="insertScapReport">
-  {{#autoForm collection="ScrapReport" id="insertScapReport" type="insert"}}
-    <fieldset>
-      <legend>Add a scrap</legend>
-      {{> afQuickField name='scrapType'}}
-      {{> afQuickField name='workCenter'}}
-      {{> afQuickField name='quantity'}}
-      {{> afQuickField name='whoEntered'}}
-    </fieldset>
-    <button type="submit" class="btn btn-primary">Insert</button>
-  {{/autoForm}}
+  {{#if Template.subscriptionsReady}}  
+    {{#autoForm collection="ScrapReport" id="insertScapReport" type="insert"}}
+      <fieldset>
+        <legend>Add a scrap</legend>
+        {{> afQuickField name='scrapType'}}
+        {{> afQuickField name='workCenter'}}
+        {{> afQuickField name='quantity'}}
+        {{> afQuickField name='whoEntered'}}
+      </fieldset>
+      <button type="submit" class="btn btn-primary">Insert</button>
+    {{/autoForm}}
+  {{/if}}
 </template>
