@@ -1,13 +1,24 @@
 <template name="enterMaterialWarehouse">
-{{#if Template.subscriptionsReady}}  
-{{#autoForm collection="Warehouse" id="enterMaterialWarehouse" type="insert"}}
-  <fieldset>
-    <legend>Enter stock</legend>
-    {{> afFieldInput name="materialCode" autocomplete="list" type="select" options=matList}}
-    {{> afQuickField name='quantity'}}
-  </fieldset>
-  <button type="submit" class="btn btn-primary">Insert</button>
-{{/autoForm}}
-{{/if}}
-
+<div class="container">  
+	<form id="select2Form" class="form-horizontal">
+	    <div class="form-group">
+	    	<label for="quantity">Enter Quantity</label>
+	    	<input type="number" class="form-control" id="materialQuantity" placeholder="Quantity">
+	    </div>
+	    <div class="form-group">
+	        <label class="col-xs-4 control-label">Favorite color</label>
+	        <div class="col-xs-6">
+	            <select name="colors" id="select2" data-placeholder="Enter material number">
+	            	{{#each matList}}
+	                <option value={{label}}>{{value}}</option>
+	                {{/each}}
+	            </select>
+	        </div>
+	    </div>
+	    	    <div class="form-group">
+	    	<label for="quantity">Enter Quantity</label>
+	    	<input type="number" class="form-control" id="materialQuantity" placeholder="Quantity">
+	    </div>
+	</form>
+</div>
 </template>

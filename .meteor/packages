@@ -27,11 +27,10 @@ sach:flow-db-admin
 fortawesome:fontawesome
 kadira:blaze-layout
 alanning:roles
-comerc:autoform-selectize
-chhib:selectize-bootstrap-3
 dburles:collection-helpers
 rajit:bootstrap3-datepicker
 msavin:mongol
-aldeed:autoform-select2
 zimme:select2-bootstrap3-css
 natestrauser:select2
+chhib:selectize-bootstrap-3
+comerc:autoform-selectize
