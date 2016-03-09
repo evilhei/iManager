@@ -1,0 +1,13 @@
+<template name="createMaterial">
+  {{#if Template.subscriptionsReady}}  
+    {{#autoForm collection="GeneralMaterial" id="createMaterial" type="insert"}}
+      <fieldset>
+        <legend>Create new material</legend>
+        {{> afQuickField name='materialDescription'}}
+        {{> afQuickField name='Unit'}}
+        {{> afQuickField name='minimumQuantity'}}
+      </fieldset>
+      <button type="submit" class="btn btn-primary">Insert</button>
+    {{/autoForm}}
+  {{/if}}
+</template>

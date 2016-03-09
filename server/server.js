@@ -5,7 +5,7 @@ Accounts.onLogin(function() {
 Meteor.startup(function () {
 		Accounts.validateNewUser(function () {
 			var userCount = Meteor.users.find().count();
-			if (userCount > 1) {
+			if (userCount > 0) {
 				new Meteor.Error('Only one account is allowed') 
 				return false;
 			} else {
@@ -16,7 +16,6 @@ Meteor.startup(function () {
 })
 
 Meteor.methods({
-
 	//vajab veel ühte meetodit, mis ei laseks üle 1 kasutaja luua.
 	'addAdminToFirstUser': function() {
 		var adminRole = 'admin';
@@ -39,12 +38,6 @@ Meteor.methods({
 	}
 });
 
-Meteor.publish('dataForFormsWorkCenter', function(){
-	return WorkCenter.find({})
-})
-Meteor.publish('dataForFormsWorker', function(){
-	return Worker.find({})
-})
-Meteor.publish('dataForFormsScrapType', function(){
-	return ScrapType.find({})
+Meteor.publish('generalMaterialMaster', function(){
+	return GeneralMaterial.find({})
 })

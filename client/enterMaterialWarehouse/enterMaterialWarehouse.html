@@ -1,0 +1,13 @@
+<template name="enterMaterialWarehouse">
+{{#if Template.subscriptionsReady}}  
+{{#autoForm collection="Warehouse" id="enterMaterialWarehouse" type="insert"}}
+  <fieldset>
+    <legend>Enter stock</legend>
+    {{> afFieldInput name="materialCode" autocomplete="list" type="select" options=matList}}
+    {{> afQuickField name='quantity'}}
+  </fieldset>
+  <button type="submit" class="btn btn-primary">Insert</button>
+{{/autoForm}}
+{{/if}}
+
+</template>
