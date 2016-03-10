@@ -22,7 +22,6 @@ accounts-ui
 kadira:flow-router
 aldeed:autoform
 momentjs:moment
-aldeed:collection2
 sach:flow-db-admin
 fortawesome:fontawesome
 kadira:blaze-layout
@@ -34,3 +33,4 @@ zimme:select2-bootstrap3-css
 natestrauser:select2
 chhib:selectize-bootstrap-3
 comerc:autoform-selectize
+aldeed:collection2

@@ -1,24 +1,47 @@
+<template name="enterWarehouseMainView">
+	<body>
+			{{#if currentUser}}
+				{{> navBar}}
+			{{else}}
+				{{> loginButtons}}
+			{{/if}}
+		<div class="container">
+			<div class="row">	
+				{{> enterMaterialWarehouse}}
+			</div>
+		</div>
+	</body>		
+</template>
+
+
 <template name="enterMaterialWarehouse">
-<div class="container">  
-	<form id="select2Form" class="form-horizontal">
-	    <div class="form-group">
-	    	<label for="quantity">Enter Quantity</label>
-	    	<input type="number" class="form-control" id="materialQuantity" placeholder="Quantity">
-	    </div>
-	    <div class="form-group">
-	        <label class="col-xs-4 control-label">Favorite color</label>
-	        <div class="col-xs-6">
-	            <select name="colors" id="select2" data-placeholder="Enter material number">
-	            	{{#each matList}}
-	                <option value={{label}}>{{value}}</option>
-	                {{/each}}
-	            </select>
-	        </div>
-	    </div>
-	    	    <div class="form-group">
-	    	<label for="quantity">Enter Quantity</label>
-	    	<input type="number" class="form-control" id="materialQuantity" placeholder="Quantity">
-	    </div>
-	</form>
+<div class="container">
+		<form class="enterMatWarehouse">
+			<div class="form-group">
+			<label for="quantity">Enter Quantity</label>
+			<input type="number" name="quantity" class="form-control" id="materialQuantity" placeholder="Quantity" autofocus>
+			</div>
+			<div class="row">
+				<div class="col-xs-6">
+					<label for="materialNumber">Enter material number</label>
+						<select class="form-control" id="chooseMaterial">
+							{{#each matList}}
+							  <option value="{{value}}">{{label}}</option>
+							{{/each}}
+						</select>
+				</div>
+				<div class="col-xs-6">
+					<div class="alert alert-success" role="alert">{{matDesc}}</div>
+				</div>
+			</div>
+			<label for="materialNumber">Enter Storage location</label>
+				<select class="form-control" id="chooseStoraceLoc">
+					{{#each storList}}
+						<option value="{{value}}">{{label}}</option>
+					{{/each}}
+				</select>
+		  <button type="submit" class="btn btn-default">Submit</button>
+		</form>
 </div>
 </template>
+
