@@ -1,0 +1,26 @@
+<template name="storageLocMain">
+	<body>
+			{{#if currentUser}}
+				{{> navBar}}
+			{{else}}
+				{{> loginButtons}}
+			{{/if}}
+		<div class="container">
+			<div class="row">	
+				{{> storaceLoc}}
+			</div>
+		</div>
+	</body>		
+</template>
+
+<template name="storaceLoc">
+<div class="container">
+	{{#autoForm collection="StorageLoc" id="storaceLoc" type="insert"}}
+      <fieldset>
+        <legend>Craete new storage location</legend>
+        {{> afQuickField name='storageLocationName'}}
+      </fieldset>
+      <button type="submit" class="btn btn-primary">Insert</button>
+    {{/autoForm}}
+</div>
+</template>
